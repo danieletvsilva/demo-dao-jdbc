@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -26,6 +27,11 @@ public class Program2 {
 		list = departmentDao.findAll();
 		for (Department lst : list) {
 			System.out.println(lst);
-		}	
+		}			
+		
+		System.out.println("\n=== TEST 3: Department insert ===");
+		Department newDepartment = new Department(null, "Make Up");
+		departmentDao.insert(newDepartment);
+		System.out.println("Inserted! New id= " + newDepartment.getId());
 	}
 }
